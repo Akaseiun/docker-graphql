@@ -37,14 +37,14 @@ jobs:
       env:
         NEW_VERSION: ${{steps.version.outputs.version}}
       run: |
-        docker build -t akaseiun/pruebas:$NEW_VERSION .
+        docker build -t akaseiun/pruebas:graphql-$NEW_VERSION .
         docker build -t akaseiun/pruebas .
 
     - name: Push image
       env:
         NEW_VERSION: ${{steps.version.outputs.version}}
       run: |
-        docker push akaseiun/pruebas:$NEW_VERSION
+        docker push akaseiun/pruebas:graphql-$NEW_VERSION
         docker push akaseiun/pruebas
     
     # - name: Build the Docker image
