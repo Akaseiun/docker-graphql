@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         fecth-depth: 0
     - name: Docker login
@@ -23,7 +23,7 @@ jobs:
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
       run: |
         echo "Iniciando login"
-        docker login -u $DOCKER_LOGIN -p $DOCKER_PASSWORD
+        docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         echo "Fin de login"
     
     # - name: Build the Docker image
